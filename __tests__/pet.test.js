@@ -86,4 +86,15 @@ describe('hungerLevel', () => {
     expect(pet.fitness).toEqual(10);
   });
 });
+describe('checkUp', () => {
+  it('returns a string that lets you know how the pet is feeling', () => {
+    const pet = new Pet('fido');
+
+    pet.fitness = 3;
+    pet.checkUp();
+   
+
+    expect(pet.fitness).toEqual('i need a walk');
+  });
+});
 });

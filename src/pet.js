@@ -18,10 +18,16 @@ function Pet(name) {
     }
     }
     Pet.prototype.hungerLevel = function() {
-        if ((this.hunger -=3) <= 0) {
+        if ((this.hunger -= 3) <= 0 ) {
             this.hunger -3;
         } else {
             this.hunger= 0;
+        }
+    }
+    Pet.prototype.checkUp = function() {
+        if (this.fitness <= 3) {
+            this.fitness = 3;
+            return 'i need a walk';
         }
     }
 }
