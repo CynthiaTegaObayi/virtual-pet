@@ -35,4 +35,18 @@ describe('growUp', () => {
   
       expect(pet.hunger).toEqual(5);
   });
+  it('has a initial fitness of 10', () => {
+    const pet = new Pet('Fido');
+  
+    expect(pet.fitness).toEqual(10);
+  });
+  });
+  describe('growUp', () => {
+    it('decreases fitness by 3', () => {
+      const pet = new Pet('Fido');
+  
+      pet.growUp();
+  
+      expect(pet.fitness).toEqual(7);
+  });
 });
