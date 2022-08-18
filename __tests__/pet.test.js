@@ -68,4 +68,22 @@ describe('growUp', () => {
     expect(pet.fitness).toEqual(10);
   });
 });
+describe('hungerLevel', () => {
+  it('decreases hunger level by 3', () => {
+    const pet = new Pet('fido');
+
+    pet.hunger = 10;
+    pet.hungerLevel();
+
+    expect(pet.fitness).toEqual(10);
+  });
+  it('decreases fitness by to a minimum of 0', () => {
+    const pet = new Pet('fido');
+
+    pet.hunger = 10;
+    pet.hungerLevel();
+
+    expect(pet.fitness).toEqual(10);
+  });
+});
 });
