@@ -94,7 +94,58 @@ describe('checkUp', () => {
     pet.checkUp();
    
 
-    expect(pet.fitness).toEqual('i need a walk');
+    expect(pet.checkUp()).toEqual('I need a walk');
+  });
+  it('returns a string that lets you know how the pet is feeling', () => {
+    const pet = new Pet('fido');
+
+    pet.hunger = 5;
+    pet.checkUp();
+   
+
+    expect(pet.checkUp()).toEqual('I am hungry');
   });
 });
+  describe('checkUp', () => {
+  it('returns a string that lets you know how the pet is feeling', () => {
+    const pet = new Pet('fido');
+
+    pet.fitness = 3;
+    pet.hunger = 5;
+    pet.checkUp();
+   
+
+    expect(pet.checkUp()).toEqual('I am hungry AND I need a walk');
+  });
+
+it('returns a string that lets you know how the pet is feeling', () => {
+    const pet = new Pet('fido');
+    expect(pet.checkUp()).toEqual('I feel great');
+});
+});
+describe('isAlive', () => {
+  it('illustrates the pets fitness', () => {
+    const pet = new Pet('fido');
+
+    pet.fitness = 0;
+    pet.hunger = 10;
+    pet.age = 30;
+    
+
+    expect(pet.isAlive).toEqual(false);
+  });
+  it('returns true if none of the above are true', () => {
+    const pet = new Pet('fido');
+    expect(pet.isAlive).toEqual(true);
+  });
+});
+describe('feed', () => {
+  it('throws an error if the pet is not alive', () => {
+      const pet = new Pet('Fido');
+
+      pet.age = 30;
+
+      expect(() => pet.feed).toThrow('Your pet is no longer alive :(');
+    });
+  });
 });
